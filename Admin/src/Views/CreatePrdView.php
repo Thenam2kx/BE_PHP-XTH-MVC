@@ -86,9 +86,12 @@
         <label for="productCategory">Danh mục sản phẩm:</label>
         <select id="productCategory" name="productCategory" required>
           <option value="">Chọn danh mục</option>
-          <option value="1">Điện tử</option>
-          <option value="2">Thời trang</option>
-          <option value="3">Đồ gia dụng</option>
+          <?php
+            foreach ($categorys as $category) { ?>
+              <option value="<?= $category['CategoryID'] ?>"><?= $category['CategoryName'] ?></option>
+            <?php
+            }
+          ?>
         </select>
         <span class="error" id="productCategoryError"></span>
       </div>
