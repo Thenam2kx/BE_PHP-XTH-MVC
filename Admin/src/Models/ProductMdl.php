@@ -55,4 +55,3 @@
       $this->db->query($sql);
     }
   }
-?>

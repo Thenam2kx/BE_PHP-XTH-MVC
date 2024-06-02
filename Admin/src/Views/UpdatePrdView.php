@@ -85,10 +85,10 @@
       <div class="form-group">
         <label for="productCategory">Danh mục sản phẩm:</label>
         <select id="productCategory" name="productCategory" required>
-        <option value="<?= $infoPrd['CategoryID'] ?>"><?= $infoPrd['CategoryID'] ?></option>
+        
           <?php
             foreach ($categorys as $category) { ?>
-              <option value="<?= $category['CategoryID'] ?>"><?= $category['CategoryName'] ?></option>
+              <option <?php if ($infoPrd['CategoryID'] == $category['CategoryID']) echo "selected" ?> value="<?= $category['CategoryID'] ?>"><?= $category['CategoryName'] ?></option>
             <?php
             }
           ?>
@@ -102,7 +102,7 @@
       </div>
       <div class="form-group">
         <label for="productDescription">Mô tả sản phẩm:</label>
-        <textarea id="productDescription" name="productDescription" value="<?= $infoPrd['Description'] ?>" required></textarea>
+        <textarea id="productDescription" name="productDescription" required><?= $infoPrd['Description'] ?></textarea>
         <span class="error" id="productDescriptionError"></span>
       </div>
       <button type="submit" name="UpdatePrd">Cập nhật Sản Phẩm</button>

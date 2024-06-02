@@ -148,7 +148,7 @@
                   </div>
                 </td>
                 <td><?= $product['CategoryID'] ?></td>
-                <td><?= $product['UnitPrice'] ?></td>
+                <td><?= number_format($product['UnitPrice'], 0, ',', '.').' <sup>đ</sup>' ?></td>
                 <td><?= $product['Description'] ?></td>
                 <td><?= $product['CreateAt'] ?></td>
                 <td class="actions">

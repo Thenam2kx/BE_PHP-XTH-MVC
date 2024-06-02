@@ -29,7 +29,7 @@
       <?php
       foreach ($products as $product) { ?>
         <div class="product-card">
-          <img src="https://picsum.photos/200/300" alt="Sản phẩm">
+          <img src="<?= './admin'.$product['Thumbnail'] ?>" alt="Sản phẩm">
           <div class="product-details">
             <div class="product-name"><?= $product['ProductName'] ?></div>
             <div>

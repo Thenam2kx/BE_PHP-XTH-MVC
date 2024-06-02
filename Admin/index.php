@@ -1,5 +1,6 @@
 <?php
 include './src/Controllers/ProductCtrl.php';
+include './src/Includes/Helper.php';
 
 $url = isset($_GET['action']) ? $_GET['action'] : 'Home';
 

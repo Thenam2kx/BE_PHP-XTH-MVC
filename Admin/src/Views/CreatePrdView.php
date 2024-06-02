@@ -76,7 +76,7 @@
 <body>
   <div class="container">
     <h2>Tạo Sản Phẩm Mới</h2>
-    <form id="productForm" method="post">
+    <form id="productForm" method="post" enctype='multipart/form-data'>
       <div class="form-group">
         <label for="productName">Tên sản phẩm:</label>
         <input type="text" id="productName" name="productName" required>
@@ -99,6 +99,11 @@
         <label for="productPrice">Giá sản phẩm:</label>
         <input type="text" id="productPrice" name="productPrice" required>
         <span class="error" id="productPriceError"></span>
+      </div>
+      <div class="form-group">
+        <label for="productPrice">Upload file</label>
+        <input type="file" id="uploadfile" name="uploadfile" required>
+        <span class="error" id="uploadfileError"></span>
       </div>
       <div class="form-group">
         <label for="productDescription">Mô tả sản phẩm:</label>

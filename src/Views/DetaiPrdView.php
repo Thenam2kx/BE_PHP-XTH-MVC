@@ -9,7 +9,7 @@
 <body>
 
 <div class="product-detail">
-    <img src="https://picsum.photos/500/300" alt="Sản phẩm" class="product-image">
+    <img src="<?= './admin'.$product['Thumbnail'] ?>" alt="Sản phẩm" class="product-image">
     <div class="product-info">
         <div class="product-name"><?= $product['ProductName'] ?></div>
         <div class="price-container">

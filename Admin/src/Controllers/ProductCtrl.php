@@ -23,7 +23,9 @@
         $productPrice = $_POST['productPrice'];
         $productDescription = $_POST['productDescription'];
         $CreateAt = date('y-m-d');
-        $Thumbnail = null;
+        $uploadFile = $_FILES['uploadfile'];
+        $img_path = uploadFile($uploadFile);
+        $Thumbnail = $img_path;
         $this->ProductMdl->AddPrd($productCategory, $productName, $Thumbnail, $productPrice, $CreateAt, $productDescription);
       }
     }
@@ -41,8 +43,9 @@
         $CreateAt = date('y-m-d');
         $Thumbnail = null;
         $this->ProductMdl->UpdatePrd($productCategory, $productName, $Thumbnail, $productPrice, $CreateAt, $productDescription, $id);
+        // exit(header("location: ?action=Home"));
       }
-
+      
     }
 
     function DeletePrd ($id) {
@@ -50,4 +53,3 @@
         header("location:?action=Home");
     }
   }
-?>
