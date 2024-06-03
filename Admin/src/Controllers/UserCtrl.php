@@ -24,9 +24,8 @@
         $Phone = $_POST['userPhone'];
         $Gender = $_POST['userGender'];
         $Password = $_POST['userPass'];
-        // echo 'roleid: '.$RoleID.' /fullnane '.$FullName.' /email: '. $Email.' / Phone: '. $Phone.' / Gendeer: '. $Gender.' / pass '. $Password;
-        // die();
         $this->UserMdl->AddUser($RoleID, $FullName, $Email, $Phone, $Gender, $Password);
+        header("location:?action=User");
       }
     }
 

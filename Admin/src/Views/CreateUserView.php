@@ -100,7 +100,7 @@
         <label for="userRole">Giới tính:</label>
         <select id="userRole" name="userGender" required>
           <option value="0">Chọn Giới tính</option>
-          <option value="-1">Nam</option>
+          <option value="0">Nam</option>
           <option value="1">Nữ</option>
         </select>
         <span class="error" id="productCategoryError"></span>

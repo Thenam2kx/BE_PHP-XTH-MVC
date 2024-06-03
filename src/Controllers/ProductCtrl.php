@@ -16,5 +16,13 @@
       $product = $this->ProductMdl->GetOnePrd($id);
       include './src/Views/DetaiPrdView.php';
     }
+
+    function Login () {
+      include './src/Views/LoginView.php';
+    }
+
+    function Register () {
+      
+      include './src/Views/RegisterView.php';
+    }
   }
-?>
