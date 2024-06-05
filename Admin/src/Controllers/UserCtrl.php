@@ -29,26 +29,30 @@
       }
     }
 
-  //   function UpdatePrd ($id) {
-  //     $categorys = $this->ProductMdl->GetAllCate();
-  //     $infoPrd = $this->ProductMdl->GetOnePrd($id);
-  //     include './src/Views/UpdatePrdView.php';
+    function UpdateUserView ($id) {
+      $roles = $this->UserMdl->GetAllRole();
+      $infoUser = $this->UserMdl->GetOneUser($id);
+      include './src/Views/UpdateUserView.php';
+    }
 
-  //     if (isset($_POST['UpdatePrd'])) {
-  //       $productName = $_POST['productName'];
-  //       $productCategory = $_POST['productCategory'];
-  //       $productPrice = $_POST['productPrice'];
-  //       $productDescription = $_POST['productDescription'];
-  //       $CreateAt = date('y-m-d');
-  //       $Thumbnail = null;
-  //       $this->ProductMdl->UpdatePrd($productCategory, $productName, $Thumbnail, $productPrice, $CreateAt, $productDescription, $id);
-  //       // exit(header("location: ?action=Home"));
-  //     }
+    function UpdateUser ($id) {
+
+      if (isset($_POST['UpdateUser'])) {
+        $RoleID = $_POST['userRole'];
+        $FullName = $_POST['userName'];
+        $Email = $_POST['userEmail'];
+        $Phone = $_POST['userPhone'];
+        $Gender = $_POST['userGender'];
+        $Password = $_POST['userPass'];
+        $UserID = $id;
+        $this->UserMdl->UpdateUser($UserID, $RoleID, $FullName, $Email, $Phone, $Gender, $Password);
+        header("location: ?action=User");
+      }
       
-  //   }
+    }
 
-  //   function DeletePrd ($id) {
-  //       $this->ProductMdl->DeletePrdMdl($id);
-  //       header("location:?action=Home");
-  //   }
+    function DeleteUser ($id) {
+        $this->UserMdl->DeleteUserdMdl($id);
+        header("location:?action=User");
+    }
   }

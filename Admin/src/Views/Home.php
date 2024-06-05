@@ -153,7 +153,7 @@
                 <td><?= $product['CreateAt'] ?></td>
                 <td class="actions">
                   <form action="" method="post">
-                    <button class="update"><a href="?action=UpdatePrd&id=<?= $product['ProductID'] ?>">Cập Nhật</a></button>
+                    <button class="update"><a href="?action=Updateview&id=<?= $product['ProductID'] ?>">Cập Nhật</a></button>
                     <button class="delete"><a href="?action=DeletePrd&id=<?= $product['ProductID'] ?>">Xoa</a></button>
                   </form>
                 </td>
@@ -167,7 +167,7 @@
   </div>
 
   <div style="display: flex; align-items: center; justify-content:center; margin-top:40px;">
-    <button  class="update"><a href="?action=CreatePrd">Add new Product</a></button>
+    <button  class="update"><a href="?action=CreatePrdView">Add new Product</a></button>
   </div>
   
 </body>

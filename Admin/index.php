@@ -14,8 +14,17 @@ switch ($url) {
     $ProductCtrl->ShowALlPrd();
     break;
 
+  case 'CreatePrdView':
+    $ProductCtrl->CreatePrdView();
+    break;
+
   case 'CreatePrd':
     $ProductCtrl->CreatePrd();
+    break;
+
+  case 'Updateview':
+    $id = $_GET['id'];
+    $ProductCtrl->UpdateView($id);
     break;
 
   case 'UpdatePrd':
@@ -34,6 +43,21 @@ switch ($url) {
     
   case 'CreateUser':
     $UserCtrl->CreateUser();
+    break;
+
+  case 'UpdateUserView':
+    $id = $_GET['id'];
+    $UserCtrl->UpdateUserView($id);
+    break;
+
+  case 'UpdateUser':
+    $id = $_GET['id'];
+    $UserCtrl->UpdateUser($id);
+    break;
+
+  case 'DeleteUser':
+    $id = $_GET['id'];
+    $UserCtrl->DeleteUser($id);
     break;
   
   default:

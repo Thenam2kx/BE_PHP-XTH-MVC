@@ -13,9 +13,12 @@
       include './src/Views/Home.php';
     }
 
-    function CreatePrd () {
+    function CreatePrdView(){
       $categorys = $this->ProductMdl->GetAllCate();
       include './src/Views/CreatePrdView.php';
+    }
+
+    function CreatePrd () {
 
       if (isset($_POST['CreatePrd'])) {
         $productName = $_POST['productName'];
@@ -27,14 +30,17 @@
         $img_path = uploadFile($uploadFile);
         $Thumbnail = $img_path;
         $this->ProductMdl->AddPrd($productCategory, $productName, $Thumbnail, $productPrice, $CreateAt, $productDescription);
+        header("location:?action=Home");
       }
     }
 
-    function UpdatePrd ($id) {
+    function UpdateView($id){
       $categorys = $this->ProductMdl->GetAllCate();
       $infoPrd = $this->ProductMdl->GetOnePrd($id);
       include './src/Views/UpdatePrdView.php';
+    }
 
+    function UpdatePrd ($id) {
       if (isset($_POST['UpdatePrd'])) {
         $productName = $_POST['productName'];
         $productCategory = $_POST['productCategory'];
@@ -43,7 +49,7 @@
         $CreateAt = date('y-m-d');
         $Thumbnail = null;
         $this->ProductMdl->UpdatePrd($productCategory, $productName, $Thumbnail, $productPrice, $CreateAt, $productDescription, $id);
-        // exit(header("location: ?action=Home"));
+        header("location:?action=Home");
       }
       
     }

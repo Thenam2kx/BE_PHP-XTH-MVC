@@ -76,7 +76,7 @@
 <body>
   <div class="container">
     <h2>Tạo Sản Phẩm Mới</h2>
-    <form id="productForm" method="post" enctype='multipart/form-data'>
+    <form action="?action=CreatePrd" id="productForm" method="post" enctype='multipart/form-data'>
       <div class="form-group">
         <label for="productName">Tên sản phẩm:</label>
         <input type="text" id="productName" name="productName" required>

@@ -139,24 +139,24 @@
         </thead>
         <tbody>
           <?php
-            foreach ($users as $product) {
+            foreach ($users as $user) {
               ?>
               <tr>
-                <td><?= $product['UserID'] ?></td>
-                <td class="product-name">
-                  <div class="tooltip"><?= $product['FullName'] ?>
-                    <span class="tooltiptext"><?= $product['FullName'] ?></span>
+                <td><?= $user['UserID'] ?></td>
+                <td class="user-name">
+                  <div class="tooltip"><?= $user['FullName'] ?>
+                    <span class="tooltiptext"><?= $user['FullName'] ?></span>
                   </div>
                 </td>
-                <td><?= $product['RoleID'] ?></td>
-                <td><?= $product['Email'] ?></td>
-                <td><?= $product['Phone'] ?></td>
-                <td><?= $product['Gender'] ?></td>
-                <td><?= $product['Password'] ?></td>
+                <td><?= $user['RoleID'] ?></td>
+                <td><?= $user['Email'] ?></td>
+                <td><?= $user['Phone'] ?></td>
+                <td><?= $user['Gender'] ?></td>
+                <td><?= $user['Password'] ?></td>
                 <td class="actions">
                   <form action="" method="post">
-                    <button class="update"><a href="?action=UpdateUser&id=<?= $product['UserID'] ?>">Cập Nhật</a></button>
-                    <button class="delete"><a href="?action=DeleteUser&id=<?= $product['UserID'] ?>">Xoa</a></button>
+                    <button class="update"><a href="?action=UpdateUserView&id=<?= $user['UserID'] ?>">Cập Nhật</a></button>
+                    <button class="delete"><a href="?action=DeleteUser&id=<?= $user['UserID'] ?>">Xoa</a></button>
                   </form>
                 </td>
               </tr>
