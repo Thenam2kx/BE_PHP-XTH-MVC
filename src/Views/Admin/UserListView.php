@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Danh Sách Sản Phẩm</title>
+  <title>Danh Sách Người Dùng</title>
   <!-- <link rel="stylesheet" href="styles.css"> -->
   <style>
     body {
@@ -122,39 +122,41 @@
 
 <body>
   <div class="container">
-    <h2>Admin - Danh Sách Sản Phẩm</h2>
+    <h2>Admin - Danh Sách Người Dùng</h2>
     <div class="table-responsive">
       <table id="productTable">
         <thead>
           <tr>
             <th>ID</th>
-            <th>Tên sản phẩm</th>
-            <th>Danh mục</th>
-            <th>Giá</th>
-            <th>Số lượng</th>
-            <th>Thương hiệu</th>
-            <th>Hành động</th>
+            <th>User name</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Number Phone</th>
+            <th>Gender</th>
+            <th>Password</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
           <?php
-            foreach ($products as $product) {
+            foreach ($users as $user) {
               ?>
               <tr>
-                <td><?= $product['ProductID'] ?></td>
-                <td class="product-name">
-                  <div class="tooltip"><?= $product['ProductName'] ?>
-                    <span class="tooltiptext"><?= $product['ProductName'] ?></span>
+                <td><?= $user['UserID'] ?></td>
+                <td class="user-name">
+                  <div class="tooltip"><?= $user['FullName'] ?>
+                    <span class="tooltiptext"><?= $user['FullName'] ?></span>
                   </div>
                 </td>
-                <td><?= $product['CategoryID'] ?></td>
-                <td><?= number_format($product['UnitPrice'], 0, ',', '.').' <sup>đ</sup>' ?></td>
-                <td><?= $product['Description'] ?></td>
-                <td><?= $product['CreateAt'] ?></td>
+                <td><?= $user['RoleID'] ?></td>
+                <td><?= $user['Email'] ?></td>
+                <td><?= $user['Phone'] ?></td>
+                <td><?= $user['Gender'] ?></td>
+                <td><?= $user['Password'] ?></td>
                 <td class="actions">
                   <form action="" method="post">
-                    <button class="update"><a href="?action=Updateview&id=<?= $product['ProductID'] ?>">Cập Nhật</a></button>
-                    <button class="delete"><a href="?action=DeletePrd&id=<?= $product['ProductID'] ?>">Xoa</a></button>
+                    <button class="update"><a href="?controller=admin&action=UpdateUserView&id=<?= $user['UserID'] ?>">Cập Nhật</a></button>
+                    <button class="delete"><a href="?controller=admin&action=DeleteUser&id=<?= $user['UserID'] ?>">Xoa</a></button>
                   </form>
                 </td>
               </tr>
@@ -167,7 +169,7 @@
   </div>
 
   <div style="display: flex; align-items: center; justify-content:center; margin-top:40px;">
-    <button  class="update"><a href="?action=CreatePrdView">Add new Product</a></button>
+    <button  class="update"><a href="?controller=admin&action=CreateUser">Add new User</a></button>
   </div>
   
 </body>

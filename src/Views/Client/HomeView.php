@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="./public/css/HomeView.css">
+  <link rel="stylesheet" href="./assets/css/HomeView.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
       <?php
       foreach ($products as $product) { ?>
         <div class="product-card">
-          <img src="<?= './admin'.$product['Thumbnail'] ?>" alt="Sản phẩm">
+          <img src="<?= $product['Thumbnail'] ?>" alt="Sản phẩm">
           <div class="product-details">
             <div class="product-name"><?= $product['ProductName'] ?></div>
             <div>

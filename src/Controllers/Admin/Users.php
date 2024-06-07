@@ -9,13 +9,13 @@
     }
 
     function ShowAllUser () {
-      $users = $this->UserMdl->GetAllUser();
-      include './src/Views/UserView.php';
+      $users = $this->UserMdl->GetAllUsers();
+      include './src/Views/Admin/UserListView.php';
     }
 
     function CreateUser () {
-      $roles = $this->UserMdl->GetAllRole();
-      include './src/Views/CreateUserView.php';
+      $roles = $this->UserMdl->GetAllRoles();
+      include './src/Views/Admin/CreateUserView.php';
 
       if (isset($_POST['CreateUser'])) {
         $RoleID = $_POST['userRole'];
@@ -30,9 +30,9 @@
     }
 
     function UpdateUserView ($id) {
-      $roles = $this->UserMdl->GetAllRole();
+      $roles = $this->UserMdl->GetAllRoles();
       $infoUser = $this->UserMdl->GetOneUser($id);
-      include './src/Views/UpdateUserView.php';
+      include './src/Views/Admin/UpdateUserView.php';
     }
 
     function UpdateUser ($id) {

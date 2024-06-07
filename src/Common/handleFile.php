@@ -1,9 +1,5 @@
 <?php
-  function ShowData ($data) {
-    var_dump($data);
-  }
-
-  function uploadFile($file, $folderUpload = './public/images/') {
+  function uploadFile($file, $folderUpload = './assets/images/') {
 
       $pathStorage = $folderUpload . time() . $file['name'];
 

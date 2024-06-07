@@ -76,7 +76,7 @@
 <body>
   <div class="container">
     <h2>Update User</h2>
-    <form action="?action=UpdateUser&id=<?= $infoUser['UserID'] ?>" id="productForm" method="post" enctype='multipart/form-data'>
+    <form action="?controller=admin&action=UpdateUser&id=<?= $infoUser['UserID'] ?>" id="productForm" method="post" enctype='multipart/form-data'>
       <div class="form-group">
         <label for="userName">Tên người dùng:</label>
         <input type="text" id="userName" name="userName" value="<?= $infoUser['FullName'] ?>" required>

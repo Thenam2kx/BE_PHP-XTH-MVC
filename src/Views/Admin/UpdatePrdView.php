@@ -76,7 +76,7 @@
 <body>
   <div class="container">
     <h2>Update Product</h2>
-    <form action="?action=UpdatePrd&id=<?= $infoPrd['ProductID'] ?>" id="productForm" method="post">
+    <form action="?controller=admin&action=UpdatePrd&id=<?= $infoPrd['ProductID'] ?>" id="productForm" method="post">
       <div class="form-group">
         <label for="productName">Tên sản phẩm:</label>
         <input type="text" id="productName" name="productName" value="<?= $infoPrd['ProductName'] ?>" required>

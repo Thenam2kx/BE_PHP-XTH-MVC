@@ -128,35 +128,33 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>User name</th>
-            <th>Role</th>
-            <th>Email</th>
-            <th>Number Phone</th>
-            <th>Gender</th>
-            <th>Password</th>
-            <th>Action</th>
+            <th>Tên sản phẩm</th>
+            <th>Danh mục</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Thương hiệu</th>
+            <th>Hành động</th>
           </tr>
         </thead>
         <tbody>
           <?php
-            foreach ($users as $user) {
+            foreach ($products as $product) {
               ?>
               <tr>
-                <td><?= $user['UserID'] ?></td>
-                <td class="user-name">
-                  <div class="tooltip"><?= $user['FullName'] ?>
-                    <span class="tooltiptext"><?= $user['FullName'] ?></span>
+                <td><?= $product['ProductID'] ?></td>
+                <td class="product-name">
+                  <div class="tooltip"><?= $product['ProductName'] ?>
+                    <span class="tooltiptext"><?= $product['ProductName'] ?></span>
                   </div>
                 </td>
-                <td><?= $user['RoleID'] ?></td>
-                <td><?= $user['Email'] ?></td>
-                <td><?= $user['Phone'] ?></td>
-                <td><?= $user['Gender'] ?></td>
-                <td><?= $user['Password'] ?></td>
+                <td><?= $product['CategoryID'] ?></td>
+                <td><?= number_format($product['UnitPrice'], 0, ',', '.').' <sup>đ</sup>' ?></td>
+                <td><?= $product['Description'] ?></td>
+                <td><?= $product['CreateAt'] ?></td>
                 <td class="actions">
                   <form action="" method="post">
-                    <button class="update"><a href="?action=UpdateUserView&id=<?= $user['UserID'] ?>">Cập Nhật</a></button>
-                    <button class="delete"><a href="?action=DeleteUser&id=<?= $user['UserID'] ?>">Xoa</a></button>
+                    <button class="update"><a href="?controller=admin&action=LoadUpdatePrd&id=<?= $product['ProductID'] ?>">Cập Nhật</a></button>
+                    <button class="delete"><a href="?controller=admin&action=DeletePrd&id=<?= $product['ProductID'] ?>">Xoa</a></button>
                   </form>
                 </td>
               </tr>
@@ -169,7 +167,7 @@
   </div>
 
   <div style="display: flex; align-items: center; justify-content:center; margin-top:40px;">
-    <button  class="update"><a href="?action=CreateUser">Add new User</a></button>
+    <button  class="update"><a href="?controller=admin&action=CreatePrd">Add new Product</a></button>
   </div>
   
 </body>
