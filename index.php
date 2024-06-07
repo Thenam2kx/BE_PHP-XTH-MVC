@@ -103,6 +103,10 @@ switch ($controller) {
   case 'login':
     $Authentication->Login();
     break;
+
+  case 'register':
+    $Authentication->Register();
+    break;
   
   default:
     # code...
