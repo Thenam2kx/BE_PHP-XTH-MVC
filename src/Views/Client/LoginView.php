@@ -82,6 +82,9 @@
         <input type="password" id="password" name="password" required>
         <span class="error" id="passwordError"></span>
       </div>
+      <div class="form-group">
+        <a href="http://localhost/XTH-PHP/?controller=register">Đăng kí tài khoản</a>
+      </div>
       <button type="submit" name="Login">Đăng Nhập</button>
     </form>
   </div>
@@ -110,12 +113,6 @@
         document.getElementById('passwordError').textContent = 'Mật khẩu phải có ít nhất 6 ký tự.';
         document.getElementById('passwordError').style.display = 'block';
         hasError = true;
-      }
-
-      // If no errors, proceed with form submission (you can add your form submission logic here)
-      if (!hasError) {
-        alert('Đăng nhập thành công!');
-        // form.submit(); // Uncomment this to submit the form
       }
     });
   </script>

@@ -92,6 +92,11 @@
         <input type="password" id="confirmPassword" name="confirmPassword" required>
         <span class="error" id="confirmPasswordError"></span>
       </div>
+
+      <div class="form-group">
+        <a href="http://localhost/XTH-PHP/?controller=login">Đăng nhập</a>
+      </div>
+      
       <button type="submit" name="submit">Đăng Ký</button>
     </form>
   </div>

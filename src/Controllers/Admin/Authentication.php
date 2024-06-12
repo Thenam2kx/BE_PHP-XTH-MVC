@@ -15,15 +15,24 @@ class Authentication {
     if (isset($_POST['Login'])) {
       $email = $_POST['email'];
       $password = $_POST['password'];
-
+      $role;
       if (
         (isset($_SESSION['email']) && $_SESSION['email'] == $email)
-
         &&
-
         (isset($_SESSION['password']) && $_SESSION['password'] == $password)
         ) {
-          header("location: http://localhost/XTH-PHP/");
+
+          foreach ($users as $user) {
+            if ($user['Email'] == $email && $user['Paddword'] = $password) {
+              $role = $user['RoleID'];
+            }
+          }
+          if ($role == '1') {
+            header("location: http://localhost/XTH-PHP/");
+          } else {
+            header("location: http://localhost/XTH-PHP/?controller=admin");
+          }
+          
       } else {
         foreach ($users as $user) {
           if ($user['Email'] == $email && $user['Password'] == $password) {
@@ -31,6 +40,16 @@ class Authentication {
             $_SESSION['password'] = $password;
             header("location: http://localhost/XTH-PHP/");
           }
+        }
+        foreach ($users as $user) {
+          if ($user['Email'] == $email && $user['Paddword'] = $password) {
+            $role = $user['RoleID'];
+          }
+        }
+        if ($role == '1') {
+          header("location: http://localhost/XTH-PHP/");
+        } else {
+          header("location: http://localhost/XTH-PHP/?controller=admin");
         }
       }
     }
@@ -63,3 +82,32 @@ class Authentication {
     }
   }
 }
+
+// if (
+//   (isset($_SESSION['email']) && $_SESSION['email'] == $email)
+//   &&
+//   (isset($_SESSION['password']) && $_SESSION['password'] == $password)
+//   ) {
+
+//     foreach ($users as $user) {
+//       if ($user['Email'] == $email && $user['Password'] = $password) {
+//         $role = $user['RoleID'];
+//       }
+//     }
+    
+//     // header("location: http://localhost/XTH-PHP/");
+
+// } else {
+//   foreach ($users as $user) {
+//     if ($user['Email'] == $email && $user['Password'] == $password) {
+//       $_SESSION['email'] = $email;
+//       $_SESSION['password'] = $password;
+      
+//     }
+//   }
+//   if ($role == 1) {
+//     header("location: http://localhost/XTH-PHP/");
+//   } else  if ($role == 2){
+//     header("location: http://localhost/XTH-PHP/?controller=admin");
+//   }
+// }
